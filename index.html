@@ -15,7 +15,10 @@
 
 body{
   min-height:100vh;
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("mimi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -104,7 +107,9 @@ Forever Yours,<br>
 <button onclick="surprise()">Click For Surprise 💝</button>
 
 </div>
-
+<audio id="bgMusic" loop>
+  <source src="awaara-dil.mp3" type="audio/mpeg">
+                                                   </audio>
 
 <script>
 
@@ -125,7 +130,10 @@ setInterval(createHeart,300);
 
 
 function surprise(){
- alert("MiMi ❤️ You are my most beautiful blessing. Happy Birthday 👑");
+
+document.getElementById("bgMusic").play();
+
+alert("🎉 Happy Birthday, Mimi! ❤️");
 }
 
 </script>
