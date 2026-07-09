@@ -3,138 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MiMi Birthday Surprise ❤️</title>
+<title>Happy Birthday My Queen ❤️</title>
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-  min-height:100vh;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("mimi.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-  color:white;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+    color:white;
 }
 
-.container{
-  text-align:center;
-  padding:30px;
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(10px);
-  border-radius:25px;
-  width:90%;
-  max-width:500px;
-  box-shadow:0 0 30px rgba(0,0,0,.2);
-  animation:show 2s ease;
+.intro{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle,#4b003f,#000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:10;
+    animation:fadeOut 3s ease 6s forwards;
 }
 
-h1{
-  font-size:35px;
-  margin-bottom:20px;
+.intro h1{
+    font-size:50px;
+    text-align:center;
+    animation:zoom 3s infinite alternate;
 }
 
-p{
-  font-size:18px;
-  line-height:1.7;
+.intro p{
+    margin-top:20px;
+    font-size:22px;
+    letter-spacing:3px;
+}
+
+.main{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1513151233558-d860c5398176");
+    background-size:cover;
+    background-position:center;
+}
+
+.main h2{
+    font-size:45px;
+    text-shadow:0 0 20px pink;
+}
+
+.main p{
+    font-size:22px;
+    margin-top:15px;
 }
 
 .heart{
-  position:absolute;
-  font-size:25px;
-  animation:float 6s linear infinite;
+    position:absolute;
+    color:#ff4d88;
+    font-size:25px;
+    animation:float 5s linear infinite;
 }
 
-button{
-  margin-top:25px;
-  padding:12px 25px;
-  border:none;
-  border-radius:30px;
-  background:white;
-  color:#ff4b6e;
-  font-size:17px;
-  cursor:pointer;
+@keyframes zoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.2);
+    }
 }
 
-@keyframes show{
-  from{opacity:0; transform:scale(.7);}
-  to{opacity:1; transform:scale(1);}
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
 }
 
 @keyframes float{
-  0%{
-    transform:translateY(100vh);
-    opacity:1;
-  }
-  100%{
-    transform:translateY(-10vh);
-    opacity:0;
-  }
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
-
-<h1>My Birthday Queen 👑</h1>
-
-<p>
-Happy Birthday My Love ❤️<br><br>
-
-Today is your special day.<br>
-Thank you for coming into my life.<br>
-You are my happiness, my peace,<br>
-and the most beautiful chapter of my life.<br><br>
-
-I Love You MiMi... ❤️<br>
-I Really Really Love You...!! 🥹🫶🏻<br><br>
-
-Forever Yours,<br>
-❤️ Eshan ❤️
-</p>
-
-<button onclick="surprise()">Click For Surprise 💝</button>
-
+<div class="intro">
+    <h1>🌌 A Special Surprise Awaits...</h1>
+    <p>For My Queen ❤️</p>
 </div>
-<audio id="bgMusic" loop>
-  <source src="awaara-dil.mp3" type="audio/mpeg">
-                                                   </audio>
+
+
+<div class="main">
+    <h2>Happy Birthday My Queen 👑</h2>
+    <p>Someone special made this just for you ❤️</p>
+</div>
+
 
 <script>
 
 function createHeart(){
- let heart=document.createElement("div");
- heart.className="heart";
- heart.innerHTML="❤️";
- heart.style.left=Math.random()*100+"%";
- heart.style.animationDuration=(3+Math.random()*5)+"s";
- document.body.appendChild(heart);
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
 
- setTimeout(()=>{
-  heart.remove();
- },6000);
+    heart.style.left=Math.random()*100+"%";
+    heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
 }
 
 setInterval(createHeart,300);
-
-
-function surprise(){
-
-document.getElementById("bgMusic").play();
-
-alert("🎉 Happy Birthday, Mimi! ❤️");
-}
 
 </script>
 
