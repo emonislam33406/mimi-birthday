@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiMi Birthday Surprise ❤️</title>
 
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+}
+
+.container{
+  text-align:center;
+  padding:30px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  border-radius:25px;
+  width:90%;
+  max-width:500px;
+  box-shadow:0 0 30px rgba(0,0,0,.2);
+  animation:show 2s ease;
+}
+
+h1{
+  font-size:35px;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.7;
+}
+
+.heart{
+  position:absolute;
+  font-size:25px;
+  animation:float 6s linear infinite;
+}
+
+button{
+  margin-top:25px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4b6e;
+  font-size:17px;
+  cursor:pointer;
+}
+
+@keyframes show{
+  from{opacity:0; transform:scale(.7);}
+  to{opacity:1; transform:scale(1);}
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(100vh);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-10vh);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>My Birthday Queen 👑</h1>
+
+<p>
+Happy Birthday My Love ❤️<br><br>
+
+Today is your special day.<br>
+Thank you for coming into my life.<br>
+You are my happiness, my peace,<br>
+and the most beautiful chapter of my life.<br><br>
+
+I Love You MiMi... ❤️<br>
+I Really Really Love You...!! 🥹🫶🏻<br><br>
+
+Forever Yours,<br>
+❤️ Eshan ❤️
+</p>
+
+<button onclick="surprise()">Click For Surprise 💝</button>
+
+</div>
+
+
+<script>
+
+function createHeart(){
+ let heart=document.createElement("div");
+ heart.className="heart";
+ heart.innerHTML="❤️";
+ heart.style.left=Math.random()*100+"%";
+ heart.style.animationDuration=(3+Math.random()*5)+"s";
+ document.body.appendChild(heart);
+
+ setTimeout(()=>{
+  heart.remove();
+ },6000);
+}
+
+setInterval(createHeart,300);
+
+
+function surprise(){
+ alert("MiMi ❤️ You are my most beautiful blessing. Happy Birthday 👑");
+}
+
+</script>
+
+</body>
+</html>
