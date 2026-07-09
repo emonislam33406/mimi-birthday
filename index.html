@@ -1,143 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday My Queen ❤️</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    height:100vh;
-    overflow:hidden;
-    background:#000;
-    color:white;
-}
-
-.intro{
-    position:fixed;
-    inset:0;
-    background:radial-gradient(circle,#4b003f,#000);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:10;
-    animation:fadeOut 3s ease 6s forwards;
-}
-
-.intro h1{
-    font-size:50px;
-    text-align:center;
-    animation:zoom 3s infinite alternate;
-}
-
-.intro p{
-    margin-top:20px;
-    font-size:22px;
-    letter-spacing:3px;
-}
-
-.main{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
-    url("https://images.unsplash.com/photo-1513151233558-d860c5398176");
-    background-size:cover;
-    background-position:center;
-}
-
-.main h2{
-    font-size:45px;
-    text-shadow:0 0 20px pink;
-}
-
-.main p{
-    font-size:22px;
-    margin-top:15px;
-}
-
-.heart{
-    position:absolute;
-    color:#ff4d88;
-    font-size:25px;
-    animation:float 5s linear infinite;
-}
-
-@keyframes zoom{
-    from{
-        transform:scale(1);
-    }
-    to{
-        transform:scale(1.2);
-    }
-}
-
-@keyframes fadeOut{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-}
-
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="intro">
-    <h1>🌌 A Special Surprise Awaits...</h1>
-    <p>For My Queen ❤️</p>
-</div>
+<!-- Cinematic Intro -->
 
+<section id="intro">
 
-<div class="main">
-    <h2>Happy Birthday My Queen 👑</h2>
-    <p>Someone special made this just for you ❤️</p>
-</div>
+    <div class="intro-content">
 
+        <h1>🌌 A Special Surprise Awaits...</h1>
 
-<script>
+        <p>Only For My Queen ❤️</p>
 
-function createHeart(){
-    let heart=document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="❤️";
+    </div>
 
-    heart.style.left=Math.random()*100+"%";
-    heart.style.animationDuration=(3+Math.random()*3)+"s";
+</section>
 
-    document.body.appendChild(heart);
+<!-- Main Screen -->
 
-    setTimeout(()=>{
-        heart.remove();
-    },6000);
-}
+<section id="home">
 
-setInterval(createHeart,300);
+    <div class="overlay"></div>
 
-</script>
+    <div class="content">
+
+        <h1 class="title">
+            Happy Birthday
+        </h1>
+
+        <h2 class="queen">
+            My Queen Eshya 👑
+        </h2>
+
+        <p id="typing"></p>
+
+        <button id="startBtn">
+            Open Your Surprise 🎁
+        </button>
+
+    </div>
+
+</section> 
+    <!-- I LOVE YOU Section -->
+
+<section id="love">
+
+    <div class="love-box">
+
+        <h1 class="love-text">
+            ❤️ I LOVE YOU MIMI ❤️
+        </h1>
+
+        <p class="love-sub">
+            Every heartbeat whispers your name...
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Gift Section -->
+
+<section id="gift">
+
+    <div class="gift-container">
+
+        <h2>🎁 Touch The Gift 🎁</h2>
+
+        <div id="giftBox">
+            🎁
+        </div>
+
+        <p id="giftHint">
+            Tap the Gift...
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Love Letter -->
+
+<section id="letter">
+
+    <div class="letter-box">
+
+        <h2>💌 A Letter For You</h2>
+
+        <p id="letterText"></p>
+
+    </div>
+
+</section>
+<!-- Memory Section -->
+
+<section id="memory">
+
+    <div class="memory-box">
+
+        <img src="mimi.jpg" alt="MiMi" class="memory-photo">
+
+        <h2>My Beautiful Queen ❤️</h2>
+
+        <p>
+            Every moment with you is the most beautiful chapter of my life.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Surprise Poster -->
+
+<section id="poster">
+
+    <img src="surprise.png" alt="Surprise Poster" class="poster">
+
+</section>
+
+<!-- Music -->
+
+<audio id="birthdayMusic" loop>
+    <source src="awaara-dil.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">
+    🎵 Play Music
+</button> 
+    <!-- Final Celebration -->
+
+<section id="final">
+
+    <div class="final-content">
+
+        <h1 id="finalTitle">
+            👑 Happy Birthday My Queen Eshya ❤️
+        </h1>
+
+        <p class="final-text">
+            May your smile always shine brighter than the stars.
+            You are my happiness, my peace, my forever. 💖
+        </p>
+
+        <div id="fireworks"></div>
+
+    </div>
+
+</section>
+
+<!-- Floating Hearts -->
+
+<div id="hearts-container"></div>
+
+<!-- Falling Rose Petals -->
+
+<div id="petals-container"></div> 
+<!-- Script -->
+
+<script src="script.js"></script>
 
 </body>
-</html>
+
+    </html>
+ 
