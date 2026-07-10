@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Happy Birthday My Queen Eshya ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- Scene 1 : Intro -->
+<!-- ========================= -->
+
+<section id="intro">
+
+    <div class="intro-content">
+
+        <h1>🎂 Happy Birthday</h1>
+
+        <h2>My Queen Eshya ❤️</h2>
+
+        <p class="intro-text">
+            Wear your headphones 🎧<br>
+            A magical surprise is waiting for you...
+        </p>
+
+        <div id="countdown">
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+        </div>
+
+        <button id="startBtn">
+            ✨ Start Surprise
+        </button>
+
+    </div>
+
+  </section>
+  <!-- ========================= -->
+<!-- Scene 2 : Galaxy -->
+<!-- ========================= -->
+
+<section id="galaxy">
+
+    <div class="stars"></div>
+
+    <div class="galaxy-content">
+
+        <h1>✨ Welcome My Queen ✨</h1>
+
+        <h2>Eshya ❤️</h2>
+
+        <p>
+            Every star in the sky shines,<br>
+            but none shines brighter than your smile.
+        </p>
+
+        <button id="nextBtn">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Scene 3 : Love -->
+<!-- ========================= -->
+
+<section id="love">
+
+    <div class="love-content">
+
+        <h1>I LOVE YOU</h1>
+
+        <h2>MIMI ❤️</h2>
+
+        <p id="typing"></p>
+
+    </div>
+
+      </section>
+  <!-- ========================= -->
+<!-- Scene 4 : Gift Box -->
+<!-- ========================= -->
+
+<section id="gift">
+
+    <div class="gift-content">
+
+        <h1>🎁 A Special Gift For You</h1>
+
+        <p>Tap the Gift Box ❤️</p>
+
+        <div id="giftBox">
+            🎁
+        </div>
+
+        <div id="giftMessage">
+
+            <h2>💖 Surprise 💖</h2>
+
+            <p>
+                Every moment with you is the
+                most beautiful gift of my life.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Scene 5 : Love Letter -->
+<!-- ========================= -->
+
+<section id="letter">
+
+    <div class="letter-content">
+
+        <button id="letterBtn">
+            💌 Open My Letter
+        </button>
+
+        <div id="loveLetter">
+
+            <h2>My Dear Eshya ❤️</h2>
+
+            <p id="letterText"></p>
+
+        </div>
+
+    </div>
+
+</section>
+  <!-- ========================= -->
+<!-- Scene 6 : Memory -->
+<!-- ========================= -->
+
+<section id="memory">
+
+    <div class="memory-content">
+
+        <h1>📸 My Beautiful Queen</h1>
+
+        <img src="mimi.jpg" alt="Mimi" class="memory-photo">
+
+        <p>
+            Every picture of you is a beautiful memory that
+            I want to keep forever. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Scene 7 : Surprise Poster -->
+<!-- ========================= -->
+
+<section id="posterSection">
+
+    <div class="poster-content">
+
+        <h1>✨ One More Surprise ✨</h1>
+
+        <img src="surprise.png" alt="Surprise" id="poster">
+
+        <p>Tap the poster to see the magic ❤️</p>
+
+    </div>
+
+  </section>
+  <!-- ========================= -->
+<!-- Scene 8 : Music -->
+<!-- ========================= -->
+
+<section id="music">
+
+    <div class="music-content">
+
+        <h1>🎵 Our Song</h1>
+
+        <p>
+            Close your eyes...<br>
+            Feel every heartbeat. ❤️
+        </p>
+
+        <button id="musicBtn">
+            ▶ Play Heeriye
+        </button>
+
+        <audio id="birthdayMusic" loop>
+            <source src="heeriye.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Scene 9 : Final -->
+<!-- ========================= -->
+
+<section id="final">
+
+    <div class="final-content">
+
+        <h1 id="finalMessage">
+            Happy Birthday My Queen Eshya ❤️
+        </h1>
+
+        <p class="final-text">
+            May your smile always stay this beautiful,
+            and may every dream of yours come true.
+            ❤️👑
+        </p>
+
+    </div>
+
+  </section>
+  <!-- ========================= -->
+<!-- Effects Layer -->
+<!-- ========================= -->
+
+<div id="hearts-container"></div>
+
+<div id="petals-container"></div>
+
+<div id="sparkles-container"></div>
+
+<div id="fireworks"></div>
+
+<!-- ========================= -->
+<!-- Floating Balloons -->
+<!-- ========================= -->
+
+<div class="balloons">
+
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+
+</div>
+
+<!-- ========================= -->
+<!-- Shooting Stars -->
+<!-- ========================= -->
+
+<div class="shooting-stars">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+  <!-- ========================= -->
+<!-- Final Surprise -->
+<!-- ========================= -->
+
+<section id="final-surprise">
+
+    <div class="surprise-content">
+
+        <h1>💖 One Last Surprise 💖</h1>
+
+        <p>
+            Before you leave...<br>
+            I have one more thing to tell you.
+        </p>
+
+        <button id="finalBtn">
+            ❤️ Open Final Surprise ❤️
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Final Popup -->
+<!-- ========================= -->
+
+<div id="finalPopup">
+
+    <div class="popup-box">
+
+        <h1>👑 Happy Birthday My Queen Eshya 👑</h1>
+
+        <p>
+            No matter what happens...<br><br>
+
+            You will always be the most beautiful part
+            of my life. ❤️<br><br>
+
+            I Love You Forever MiMi. 💖
+        </p>
+
+        <button id="closePopup">
+            💗 Thank You 💗
+        </button>
+
+    </div>
+
+      </div>
+  <!-- ========================= -->
+<!-- JavaScript -->
+<!-- ========================= -->
+
+<script src="script.js"></script>
+
+</body>
+                          </html>
