@@ -906,3 +906,46 @@ transform:translateY(-120px) scale(1.4) rotate(180deg);
 }
 
 }
+/* =========================
+PREMIUM BUTTERFLIES
+========================= */
+
+.butterfly{
+position:fixed;
+left:-60px;
+pointer-events:none;
+z-index:998;
+font-size:28px;
+animation:butterflyFly linear forwards;
+filter:drop-shadow(0 0 8px rgba(255,105,180,.5));
+}
+
+@keyframes butterflyFly{
+
+0%{
+transform:translateX(-60px) translateY(0) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+25%{
+transform:translateX(25vw) translateY(-30px) rotate(15deg);
+}
+
+50%{
+transform:translateX(50vw) translateY(20px) rotate(-15deg);
+}
+
+75%{
+transform:translateX(75vw) translateY(-20px) rotate(10deg);
+}
+
+100%{
+transform:translateX(110vw) translateY(0);
+opacity:0;
+}
+
+   }
