@@ -481,3 +481,31 @@ function createButterfly(){
 }
 
 setInterval(createButterfly,5000);
+// =========================
+// MY PHOTO GIFT
+// =========================
+
+const myGiftBox = document.getElementById("myGiftBox");
+const myPhotoImage = document.getElementById("myPhotoImage");
+
+if (myGiftBox && myPhotoImage) {
+
+    myGiftBox.addEventListener("click", () => {
+
+        myGiftBox.innerHTML = "💖";
+        myGiftBox.style.transform = "scale(1.2) rotate(15deg)";
+
+        setTimeout(() => {
+
+            myPhotoImage.style.display = "block";
+
+            myPhotoImage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 500);
+
+    });
+
+}
