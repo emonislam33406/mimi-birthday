@@ -498,7 +498,9 @@ if (myGiftBox && myPhotoImage) {
         setTimeout(() => {
 
             myPhotoImage.style.display = "block";
-
+			document.getElementById("myPhotoTitle").style.display = "block";
+document.getElementById("myPhotoText").style.display = "block";
+            
             myPhotoImage.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
