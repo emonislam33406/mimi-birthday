@@ -219,7 +219,7 @@ if (birthdayCake) {
             setTimeout(createFirework, i * 120);
 
         }
-
+createConfetti();
     });
 
 }
@@ -251,7 +251,7 @@ if (finalBtn) {
     finalBtn.addEventListener("click", () => {
 
         finalPopup.style.display = "flex";
-
+createConfetti();
     });
 
 }
@@ -261,7 +261,7 @@ if (closePopup) {
     closePopup.addEventListener("click", () => {
 
         finalPopup.style.display = "none";
-
+        
     });
 
 }
@@ -347,4 +347,45 @@ setInterval(createFirework, 2000);
 
 console.log("❤️ Happy Birthday My Queen Eshya ❤️");
 
+// =========================
+// PREMIUM CONFETTI
+// =========================
+
+function createConfetti() {
+
+    const colors = [
+        "#ff4fa8",
+        "#ffd166",
+        "#7c3aed",
+        "#00e5ff",
+        "#ffffff"
+    ];
+
+    for (let i = 0; i < 80; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        confetti.style.animationDuration =
+            (3 + Math.random() * 2) + "s";
+
+        confetti.style.animationDelay =
+            (Math.random() * 0.5) + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 5500);
+
+    }
+
+    }
 
