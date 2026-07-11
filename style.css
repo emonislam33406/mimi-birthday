@@ -1,455 +1,720 @@
 /* =========================
-   Reset
+   RESET
 ========================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#050510;
+color:#fff;
+overflow-x:hidden;
 }
 
 /* =========================
-   Section
+BACKGROUND
+========================= */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#8b5cf655 0%,transparent 45%),
+radial-gradient(circle at bottom,#ec489955 0%,transparent 45%),
+linear-gradient(180deg,#050510,#09091f,#111132);
+z-index:-3;
+}
+
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(#ffffffcc 1px,transparent 1px);
+background-size:45px 45px;
+opacity:.25;
+animation:starsMove 70s linear infinite;
+z-index:-2;
+}
+
+@keyframes starsMove{
+0%{transform:translateY(0);}
+100%{transform:translateY(-400px);}
+}
+
+/* =========================
+COMMON SECTION
 ========================= */
 
 section{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-    padding:30px 20px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+text-align:center;
+position:relative;
+}
+
+h1{
+font-size:40px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+h2{
+font-size:28px;
+margin-bottom:15px;
+color:#ff9de6;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+color:#eee;
+}
+
+button{
+padding:15px 35px;
+margin-top:25px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:18px;
+font-weight:600;
+background:linear-gradient(45deg,#ff4fa8,#9d4dff);
+color:white;
+transition:.35s;
+box-shadow:0 0 20px rgba(255,0,150,.45);
+}
+
+button:hover{
+transform:translateY(-4px) scale(1.05);
+box-shadow:0 0 35px rgba(255,0,180,.7);
 }
 
 /* =========================
-   Intro
+LOADER
 ========================= */
 
-#intro{
-    background:linear-gradient(180deg,#000,#12001f,#000);
-    text-align:center;
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#050510;
+z-index:9999;
+overflow:hidden;
 }
 
-.intro-content h1{
-    font-size:42px;
-    color:#ff5fa2;
-    text-shadow:0 0 20px #ff5fa2;
+.loader-bg{
+position:absolute;
+width:160%;
+height:160%;
+background:
+radial-gradient(circle,#ff4fa822,transparent 60%),
+radial-gradient(circle,#7c3aed22,transparent 60%);
+animation:rotateBG 18s linear infinite;
 }
 
-.intro-content h2{
-    margin-top:15px;
-    font-size:30px;
+@keyframes rotateBG{
+100%{
+transform:rotate(360deg);
+}
 }
 
-.intro-text{
-    margin-top:25px;
-    font-size:20px;
-    line-height:1.7;
-    color:#ffd6eb;
+.loader-content{
+width:92%;
+max-width:600px;
+padding:40px 25px;
+border-radius:28px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.18);
+box-shadow:0 0 45px rgba(255,0,180,.18);
+position:relative;
+z-index:5;
 }
 
-#countdown{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:35px;
+.loader-content h1{
+font-size:45px;
 }
 
-#countdown span{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#ff2d7a;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-    box-shadow:0 0 20px #ff4da6;
+.loader-content h2{
+font-size:30px;
 }
 
-#startBtn{
-    margin-top:35px;
-    padding:16px 38px;
-    border:none;
-    border-radius:50px;
-    background:#ff2d7a;
-    color:#fff;
-    font-size:20px;
-    cursor:pointer;
+#enterBtn{
+margin-top:30px;
 }
 /* =========================
-   Galaxy
+GALAXY SECTION
 ========================= */
 
 #galaxy{
-    background:radial-gradient(circle,#220033,#000);
-    text-align:center;
-}
-
-.stars{
-    position:absolute;
-    inset:0;
-    background-image:
-        radial-gradient(white 1px, transparent 1px);
-    background-size:35px 35px;
-    opacity:.4;
+background:transparent;
 }
 
 .galaxy-content{
-    position:relative;
-    z-index:2;
+width:92%;
+max-width:700px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+backdrop-filter:blur(18px);
+box-shadow:0 0 40px rgba(255,0,170,.18);
+animation:fadeUp 1.2s ease;
 }
 
 .galaxy-content h1{
-    font-size:38px;
-    color:#ffd6eb;
+font-size:48px;
 }
 
 .galaxy-content h2{
-    margin-top:15px;
-    color:#ff66b3;
-    font-size:30px;
+color:#ff8fd5;
 }
 
-.galaxy-content p{
-    margin:25px 0;
-    line-height:1.8;
-    font-size:18px;
+.stars,
+.twinkling{
+position:absolute;
+inset:0;
+pointer-events:none;
 }
 
-#nextBtn{
-    padding:15px 35px;
-    border:none;
-    border-radius:40px;
-    background:#ff2d7a;
-    color:#fff;
-    font-size:18px;
-    cursor:pointer;
+.twinkling{
+background:radial-gradient(circle,#ffffff55 1px,transparent 1px);
+background-size:120px 120px;
+opacity:.35;
+animation:twinkle 8s linear infinite;
+}
+
+@keyframes twinkle{
+
+0%,100%{
+opacity:.2;
+}
+
+50%{
+opacity:.6;
+}
+
 }
 
 /* =========================
-   Love Section
+SHOOTING STARS
+========================= */
+
+.shooting-stars{
+position:absolute;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+}
+
+.shooting-stars span{
+position:absolute;
+width:3px;
+height:120px;
+background:linear-gradient(transparent,#fff);
+border-radius:50px;
+opacity:.8;
+animation:shoot 7s linear infinite;
+}
+
+.shooting-stars span:nth-child(1){
+left:12%;
+animation-delay:0s;
+}
+
+.shooting-stars span:nth-child(2){
+left:38%;
+animation-delay:2s;
+}
+
+.shooting-stars span:nth-child(3){
+left:65%;
+animation-delay:4s;
+}
+
+.shooting-stars span:nth-child(4){
+left:88%;
+animation-delay:6s;
+}
+
+@keyframes shoot{
+
+0%{
+transform:translateY(-220px) rotate(25deg);
+opacity:0;
+}
+
+15%{
+opacity:1;
+}
+
+100%{
+transform:translateY(120vh) translateX(220px) rotate(25deg);
+opacity:0;
+}
+
+}
+
+/* =========================
+LOVE SECTION
 ========================= */
 
 #love{
-    background:linear-gradient(#140014,#000);
-    text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.love-content{
+width:92%;
+max-width:700px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+box-shadow:0 0 40px rgba(255,0,170,.18);
+animation:fadeUp 1s ease;
 }
 
 .love-content h1{
-    font-size:52px;
-    color:#ff4da6;
-    text-shadow:0 0 25px #ff4da6;
-}
-
-.love-content h2{
-    margin-top:15px;
-    font-size:32px;
-    color:#fff;
+font-size:52px;
+color:#ff4fa8;
+margin-bottom:10px;
 }
 
 #typing{
-    margin-top:30px;
-    font-size:20px;
-    line-height:1.8;
-    color:#ffd6eb;
-    min-height:80px;
-}
-   /* =========================
-   Gift Section
-========================= */
-
-#gift{
-    background:linear-gradient(#000,#190019);
-    text-align:center;
-}
-
-.gift-content h1{
-    font-size:38px;
-    color:#ff66b3;
-}
-
-.gift-content p{
-    margin:20px 0;
-    font-size:20px;
-}
-
-#giftBox{
-    font-size:100px;
-    cursor:pointer;
-    transition:.5s;
-}
-
-#giftBox:hover{
-    transform:scale(1.15) rotate(10deg);
-}
-
-#giftMessage{
-    display:none;
-    margin-top:30px;
-    font-size:20px;
-    line-height:1.8;
-    color:#ffd6eb;
+margin-top:20px;
+font-size:20px;
+line-height:2;
+min-height:140px;
 }
 
 /* =========================
-   Love Letter
+ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+/* =========================
+LOVE LETTER
 ========================= */
 
 #letter{
-    background:linear-gradient(#140014,#000);
+background:transparent;
 }
 
 .letter-content{
-    width:100%;
-    max-width:420px;
-    text-align:center;
+width:92%;
+max-width:760px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+backdrop-filter:blur(18px);
+box-shadow:0 0 40px rgba(255,0,170,.18);
 }
 
-#letterBtn{
-    padding:16px 35px;
-    border:none;
-    border-radius:40px;
-    background:#ff2d7a;
-    color:#fff;
-    font-size:18px;
-    cursor:pointer;
+.envelope{
+width:130px;
+height:130px;
+margin:30px auto;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:65px;
+cursor:pointer;
+border-radius:50%;
+background:linear-gradient(45deg,#ff4fa8,#8b5cf6);
+transition:.4s;
+box-shadow:0 0 30px rgba(255,0,170,.4);
+}
+
+.envelope:hover{
+transform:scale(1.12) rotate(8deg);
 }
 
 #loveLetter{
-    display:none;
-    margin-top:25px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:20px;
-    padding:25px;
-    backdrop-filter:blur(12px);
+display:none;
+margin-top:25px;
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+line-height:2;
 }
 
 #loveLetter.show{
-    display:block;
-}
-
-#letterText{
-    margin-top:15px;
-    line-height:1.8;
-    color:#ffe6f2;
-    }
-    /* =========================
-   Memory Section
-========================= */
-
-#memory{
-    background:linear-gradient(#000,#1a0018);
-    text-align:center;
-}
-
-.memory-content h1{
-    font-size:36px;
-    color:#ff66b3;
-    margin-bottom:25px;
-}
-
-.memory-photo{
-    width:240px;
-    max-width:90%;
-    border-radius:20px;
-    border:4px solid #ff4da6;
-    box-shadow:0 0 30px #ff4da6;
-}
-
-.memory-content p{
-    margin-top:25px;
-    line-height:1.8;
-    color:#ffe6f2;
+display:block;
+animation:fadeUp .8s;
 }
 
 /* =========================
-   Poster Section
+GIFT
 ========================= */
 
-#posterSection{
-    background:linear-gradient(#140014,#000);
-    text-align:center;
+.gift-content{
+width:92%;
+max-width:700px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
 }
 
-.poster-content h1{
-    font-size:36px;
-    color:#ff66b3;
-    margin-bottom:25px;
+#giftBox{
+font-size:90px;
+margin:25px auto;
+cursor:pointer;
+transition:.4s;
+}
+
+#giftBox:hover{
+transform:scale(1.15) rotate(10deg);
+}
+
+#giftMessage{
+display:none;
+margin-top:20px;
+animation:fadeUp .8s;
+}
+
+/* =========================
+MEMORY
+========================= */
+
+.memory-content{
+width:92%;
+max-width:750px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
+}
+
+#slideImage{
+width:100%;
+max-width:350px;
+border-radius:20px;
+margin:25px auto;
+display:block;
+box-shadow:0 0 35px rgba(255,0,170,.35);
+transition:.5s;
+}
+
+#slideImage:hover{
+transform:scale(1.03);
+}
+
+/* =========================
+MUSIC
+========================= */
+
+.music-content{
+width:92%;
+max-width:650px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
+   }
+/* =========================
+BIRTHDAY CAKE
+========================= */
+
+.cake-content{
+width:92%;
+max-width:700px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
+box-shadow:0 0 40px rgba(255,0,170,.18);
+}
+
+#birthdayCake{
+font-size:110px;
+cursor:pointer;
+margin:25px auto;
+transition:.4s;
+animation:cakeFloat 3s ease-in-out infinite;
+}
+
+#birthdayCake:hover{
+transform:scale(1.15);
+}
+
+@keyframes cakeFloat{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
+
+/* =========================
+SURPRISE POSTER
+========================= */
+
+.poster-content{
+width:92%;
+max-width:750px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
+box-shadow:0 0 40px rgba(255,0,170,.18);
 }
 
 #poster{
-    width:280px;
-    max-width:90%;
-    border-radius:20px;
-    cursor:pointer;
-    transition:.4s;
-    box-shadow:0 0 25px #ff4da6;
+width:100%;
+max-width:350px;
+border-radius:20px;
+cursor:pointer;
+margin:25px auto;
+display:block;
+transition:.4s;
+box-shadow:0 0 30px rgba(255,0,170,.35);
+}
+
+#poster:hover{
+transform:scale(1.05);
 }
 
 #poster.zoom{
-    transform:scale(1.08);
-}
-
-.poster-content p{
-    margin-top:20px;
-    color:#ffd6eb;
+transform:scale(1.18);
 }
 
 /* =========================
-   Music Section
+FINAL SECTION
 ========================= */
 
-#music{
-    background:linear-gradient(#000,#220022);
-    text-align:center;
+.final-content{
+width:92%;
+max-width:750px;
+padding:45px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
+box-shadow:0 0 45px rgba(255,0,170,.2);
 }
 
-.music-content h1{
-    font-size:36px;
-    color:#ff66b3;
+#finalMessage{
+font-size:48px;
+color:#ff8fd5;
+margin-bottom:20px;
 }
 
-.music-content p{
-    margin:20px 0;
-    color:#ffe6f2;
-    line-height:1.8;
+.final-text{
+font-size:20px;
+line-height:2;
 }
 
-#musicBtn{
-    padding:16px 35px;
-    border:none;
-    border-radius:40px;
-    background:#ff2d7a;
-    color:#fff;
-    font-size:18px;
-    cursor:pointer;
-    box-shadow:0 0 20px #ff4da6;
-    }
-    /* =========================
-   Final Section
+/* =========================
+POPUP
 ========================= */
-
-#final,
-#final-surprise{
-    background:linear-gradient(#120012,#000);
-    text-align:center;
-}
-
-.final-content h1,
-.surprise-content h1{
-    font-size:38px;
-    color:#ff66b3;
-    text-shadow:0 0 20px #ff4da6;
-}
-
-.final-text,
-.surprise-content p{
-    margin-top:20px;
-    line-height:1.8;
-    color:#ffe6f2;
-}
-
-#finalBtn,
-#closePopup{
-    margin-top:30px;
-    padding:16px 35px;
-    border:none;
-    border-radius:40px;
-    background:#ff2d7a;
-    color:#fff;
-    font-size:18px;
-    cursor:pointer;
-    box-shadow:0 0 20px #ff4da6;
-}
 
 #finalPopup{
-    position:fixed;
-    inset:0;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    background:rgba(0,0,0,.85);
-    z-index:9999;
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+justify-content:center;
+align-items:center;
+z-index:99999;
+padding:20px;
 }
 
 .popup-box{
-    width:90%;
-    max-width:420px;
-    background:#1b001b;
-    border:2px solid #ff4da6;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 0 35px #ff4da6;
+width:95%;
+max-width:500px;
+padding:35px;
+border-radius:25px;
+background:#15152b;
+text-align:center;
+box-shadow:0 0 45px rgba(255,0,170,.4);
+border:1px solid rgba(255,255,255,.15);
 }
-
-/* Floating Hearts */
+/* =========================
+FLOATING HEARTS
+========================= */
 
 .heart{
-    position:fixed;
-    font-size:22px;
-    animation:heartFloat linear forwards;
-    z-index:999;
+position:fixed;
+bottom:-50px;
+pointer-events:none;
+animation:heartFloat linear forwards;
+z-index:999;
 }
 
 @keyframes heartFloat{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-100px);
-        opacity:0;
-    }
+0%{
+transform:translateY(0) scale(.8);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
 }
 
-/* Rose Petals */
+/* =========================
+ROSE PETALS
+========================= */
 
 .petal{
-    position:fixed;
-    font-size:20px;
-    animation:petalFall linear forwards;
-    z-index:998;
+position:fixed;
+top:-40px;
+pointer-events:none;
+animation:petalFall linear forwards;
+z-index:998;
 }
 
 @keyframes petalFall{
-    from{
-        transform:translateY(-50px) rotate(0deg);
-    }
-    to{
-        transform:translateY(110vh) rotate(360deg);
-    }
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(120vh) rotate(360deg);
+opacity:0;
+}
 }
 
-/* Mobile */
+/* =========================
+BALLOONS
+========================= */
 
-@media(max-width:480px){
-
-.intro-content h1,
-.love-content h1,
-.final-content h1{
-    font-size:30px;
+.balloons span{
+position:fixed;
+bottom:-120px;
+font-size:42px;
+animation:balloonUp 12s linear infinite;
 }
 
-.memory-photo,
-#poster{
-    width:200px;
+.balloons span:nth-child(1){left:8%;animation-delay:0s;}
+.balloons span:nth-child(2){left:28%;animation-delay:2s;}
+.balloons span:nth-child(3){left:50%;animation-delay:4s;}
+.balloons span:nth-child(4){left:72%;animation-delay:6s;}
+.balloons span:nth-child(5){left:90%;animation-delay:8s;}
+
+@keyframes balloonUp{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-130vh);
+}
 }
 
-    }
+/* =========================
+FIREWORKS
+========================= */
 
+.firework{
+position:fixed;
+pointer-events:none;
+animation:boom 1.5s ease-out forwards;
+z-index:1000;
+}
+
+@keyframes boom{
+0%{
+transform:scale(.2);
+opacity:1;
+}
+100%{
+transform:scale(2);
+opacity:0;
+}
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+h1{
+font-size:32px;
+}
+
+h2{
+font-size:24px;
+}
+
+p{
+font-size:16px;
+}
+
+button{
+width:100%;
+font-size:17px;
+}
+
+.loader-content,
+.galaxy-content,
+.love-content,
+.letter-content,
+.gift-content,
+.memory-content,
+.music-content,
+.cake-content,
+.poster-content,
+.final-content{
+
+padding:28px 20px;
+
+}
+
+#poster,
+#slideImage{
+
+max-width:280px;
+
+}
+
+#birthdayCake{
+
+font-size:90px;
+
+}
+
+}
+
+/* =========================
+THE END
+========================= */
