@@ -1,393 +1,335 @@
 // =========================
-// Birthday Website Script
-// Part 1
+// PREMIUM BIRTHDAY WEBSITE
+// Script Part 1
 // =========================
 
-// Start Button
-const startBtn = document.getElementById("startBtn");
-const intro = document.getElementById("intro");
+// Loader
 
-if (startBtn) {
+const loader = document.getElementById("loader");
+const enterBtn = document.getElementById("enterBtn");
 
-    startBtn.addEventListener("click", () => {
+enterBtn.addEventListener("click", () => {
 
-        intro.style.display = "none";
+    loader.style.opacity = "0";
 
-        document.getElementById("galaxy")
-        .scrollIntoView({
+    setTimeout(() => {
+
+        loader.style.display = "none";
+
+        document.getElementById("galaxy").scrollIntoView({
             behavior: "smooth"
         });
 
-    });
-
-}
-
-// =========================
-// Typewriter Effect
-// =========================
-
-const typing = document.getElementById("typing");
-
-const message =
-"I made this little surprise only for you, My Queen Eshya. ❤️ Every heartbeat reminds me how special you are. Happy Birthday, My Love. 💖";
-
-let i = 0;
-
-function typeWriter(){
-
-    if(!typing) return;
-
-    if(i < message.length){
-
-        typing.innerHTML += message.charAt(i);
-
-        i++;
-
-        setTimeout(typeWriter,50);
-
-    }
-
-}
-
-window.addEventListener("load",()=>{
-
-    setTimeout(typeWriter,1500);
+    }, 800);
 
 });
 
 // =========================
-// Music
-// =========================
-
-const music =
-document.getElementById("birthdayMusic");
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-if(musicBtn){
-
-    musicBtn.onclick = ()=>{
-
-        music.play();
-
-        musicBtn.innerHTML =
-        "🎵 Playing...";
-
-    };
-
-    }
-// =========================
-// Birthday Website Script
-// Part 2
-// =========================
-
 // Continue Button
 
-const nextBtn = document.getElementById("nextBtn");
+const continueBtn = document.getElementById("continueBtn");
 
-if(nextBtn){
+continueBtn.addEventListener("click", () => {
 
-    nextBtn.addEventListener("click",()=>{
+    document.getElementById("love").scrollIntoView({
+        behavior: "smooth"
+    });
 
-        document.getElementById("love")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+});
+
+// =========================
+// Typewriter
+
+const typing = document.getElementById("typing");
+
+const message =
+
+`Happy Birthday, My Queen Eshya ❤️
+
+Every heartbeat reminds me how special you are.
+
+Thank you for coming into my life.
+
+I hope today brings you endless smiles and happiness.
+
+I Love You Forever. 💖`;
+
+let index = 0;
+
+function typeWriter(){
+
+    if(index < message.length){
+
+        typing.innerHTML += message.charAt(index);
+
+        index++;
+
+        setTimeout(typeWriter,45);
+
+    }
+
+}
+
+window.onload = ()=>{
+
+    setTimeout(typeWriter,1200);
+
+};
+// =========================
+// Script Part 2
+// Love Letter
+// Gift
+// Memory Slider
+// =========================
+
+// LOVE LETTER
+
+const letterBtn = document.getElementById("letterBtn");
+const loveLetter = document.getElementById("loveLetter");
+const letterText = document.getElementById("letterText");
+
+const finalLetter = `আমার প্রিয় মিমি ❤️
+
+শুভ জন্মদিন, আমার জীবনের সবচেয়ে সুন্দর মানুষ।
+
+তোমার হাসিটা সবসময় এভাবেই সুন্দর থাকুক, এটাই আমার সবচেয়ে বড় চাওয়া।
+
+তোমার জীবনের প্রতিটি দিন আনন্দ, শান্তি আর ভালোবাসায় ভরে উঠুক।
+
+আমি তোমাকে কথা দিচ্ছি—
+পুরো পৃথিবী যখন তোমার বিপক্ষে চলে যাবে,
+তখন আমি একমাত্র তোমার পক্ষে থাকবো।
+
+তুমি আমার কাছে সবসময়ই সবচেয়ে স্পেশাল থাকবে।
+
+I Love You Forever. ❤️`;
+
+if(letterBtn){
+
+letterBtn.addEventListener("click",()=>{
+
+loveLetter.classList.toggle("show");
+letterText.innerHTML=finalLetter.replace(/\n/g,"<br>");
+
+});
+
+}
+
+// =========================
+// GIFT BOX
+
+const giftBox=document.getElementById("giftBox");
+const giftMessage=document.getElementById("giftMessage");
+
+if(giftBox){
+
+giftBox.addEventListener("click",()=>{
+
+giftBox.style.transform="scale(1.2) rotate(15deg)";
+
+setTimeout(()=>{
+
+giftBox.innerHTML="💖";
+giftMessage.style.display="block";
+
+},700);
+
+});
+
+}
+
+// =========================
+// MEMORY SLIDER
+
+const slideImage=document.getElementById("slideImage");
+
+const images=[
+"mimi1.jpg",
+"mimi2.jpg"
+];
+
+let current=0;
+
+setInterval(()=>{
+
+current++;
+
+if(current>=images.length){
+
+current=0;
+
+}
+
+slideImage.src=images[current];
+
+},3000);
+// =========================
+// PREMIUM BIRTHDAY WEBSITE
+// Script Part 3
+// Music - Cake - Poster - Popup
+// =========================
+
+// MUSIC
+
+const musicBtn = document.getElementById("musicBtn");
+const birthdayMusic = document.getElementById("birthdayMusic");
+
+if (musicBtn && birthdayMusic) {
+
+    musicBtn.addEventListener("click", () => {
+
+        birthdayMusic.play();
+
+        musicBtn.innerHTML = "🎵 Playing Heeriye ❤️";
 
     });
 
 }
 
 // =========================
-// Gift Box
-// =========================
+// CAKE
 
-const giftBox = document.getElementById("giftBox");
-const giftMessage = document.getElementById("giftMessage");
+const birthdayCake = document.getElementById("birthdayCake");
 
-if(giftBox){
+if (birthdayCake) {
 
-    giftBox.onclick = ()=>{
+    birthdayCake.addEventListener("click", () => {
 
-        giftBox.style.transform =
-        "scale(1.2) rotate(15deg)";
+        birthdayCake.style.transform = "scale(1.25)";
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            giftBox.innerHTML = "💖";
+            birthdayCake.style.transform = "scale(1)";
 
-            if(giftMessage){
+            alert("🎂 Happy Birthday My Queen Eshya ❤️");
 
-                giftMessage.style.display =
-                "block";
+        }, 500);
 
-            }
-
-        },700);
-
-    };
+    });
 
 }
 
 // =========================
-// Love Letter
-// =========================
-
-const letterBtn =
-document.getElementById("letterBtn");
-
-const loveLetter =
-document.getElementById("loveLetter");
-
-const letterText =
-document.getElementById("letterText");
-
-const fullLetter =
-`My Dear Eshya ❤️
-
-Happy Birthday to the most beautiful person in my life.
-
-I hope your smile always shines brighter than the stars.
-
-No matter what happens,
-I will always pray for your happiness.
-
-I Love You Forever. 💖`;
-
-if(letterBtn){
-
-    letterBtn.onclick = ()=>{
-
-        loveLetter.classList.toggle("show");
-
-        letterText.innerText = fullLetter;
-
-    };
-
-}
-// =========================
-// Birthday Website Script
-// Part 3
-// =========================
-
-// Poster Zoom
+// POSTER
 
 const poster = document.getElementById("poster");
 
-if(poster){
+if (poster) {
 
-    poster.onclick = ()=>{
+    poster.addEventListener("click", () => {
 
         poster.classList.toggle("zoom");
 
-    };
+    });
 
 }
 
 // =========================
-// Floating Hearts
-// =========================
-
-function createHeart(){
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    heart.innerHTML = "❤️";
-
-    heart.style.left = Math.random()*100+"vw";
-
-    heart.style.animationDuration =
-    (Math.random()*3+3)+"s";
-
-    heart.style.fontSize =
-    (Math.random()*20+15)+"px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },6000);
-
-}
-
-setInterval(createHeart,500);
-
-// =========================
-// Rose Petals
-// =========================
-
-function createPetal(){
-
-    const petal = document.createElement("div");
-
-    petal.className = "petal";
-
-    petal.innerHTML = "🌹";
-
-    petal.style.left = Math.random()*100+"vw";
-
-    petal.style.animationDuration =
-    (Math.random()*5+5)+"s";
-
-    document.body.appendChild(petal);
-
-    setTimeout(()=>{
-
-        petal.remove();
-
-    },10000);
-
-}
-
-setInterval(createPetal,800);
-// =========================
-// Birthday Website Script
-// Part 4
-// =========================
-
-// Final Surprise Popup
+// FINAL POPUP
 
 const finalBtn = document.getElementById("finalBtn");
 const finalPopup = document.getElementById("finalPopup");
 const closePopup = document.getElementById("closePopup");
 
-if(finalBtn){
+if (finalBtn) {
 
-    finalBtn.onclick = ()=>{
+    finalBtn.addEventListener("click", () => {
 
         finalPopup.style.display = "flex";
 
-    };
+    });
 
 }
 
-if(closePopup){
+if (closePopup) {
 
-    closePopup.onclick = ()=>{
+    closePopup.addEventListener("click", () => {
 
         finalPopup.style.display = "none";
 
-    };
-
-}
-
-// =========================
-// Countdown Animation
-// =========================
-
-const countdown = document.getElementById("countdown");
-
-if(countdown){
-
-    const numbers = countdown.querySelectorAll("span");
-
-    numbers.forEach((num,index)=>{
-
-        setTimeout(()=>{
-
-            num.style.transform = "scale(1.3)";
-            num.style.color = "#ff4da6";
-
-        },index*1000);
-
     });
 
 }
+// =========================
+// PREMIUM BIRTHDAY WEBSITE
+// Script Part 4 (FINAL)
+// Hearts - Petals - Fireworks
+// =========================
+
+// FLOATING HEARTS
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+
+}
+
+setInterval(createHeart, 700);
 
 // =========================
-// Firework Effect
-// =========================
+// ROSE PETALS
 
-function createFirework(){
+function createPetal() {
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+    petal.innerHTML = "🌹";
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = (20 + Math.random() * 15) + "px";
+    petal.style.animationDuration = (6 + Math.random() * 3) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 9000);
+
+}
+
+setInterval(createPetal, 1200);
+
+// =========================
+// FIREWORKS
+
+function createFirework() {
 
     const firework = document.createElement("div");
 
+    firework.className = "firework";
     firework.innerHTML = "✨";
 
-    firework.style.position = "fixed";
-    firework.style.left = Math.random()*100+"vw";
-    firework.style.top = Math.random()*100+"vh";
-    firework.style.fontSize = "30px";
-    firework.style.zIndex = "999";
+    firework.style.left = Math.random() * 100 + "vw";
+    firework.style.top = Math.random() * 100 + "vh";
+    firework.style.fontSize = (20 + Math.random() * 25) + "px";
 
     document.body.appendChild(firework);
 
-    setTimeout(()=>{
-
+    setTimeout(() => {
         firework.remove();
-
-    },1500);
+    }, 1500);
 
 }
 
-setInterval(createFirework,1200);
-// =========================
-// Birthday Website Script
-// Part 5 (Final)
-// =========================
-
-// Button Click Animation
-
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach((btn)=>{
-
-    btn.addEventListener("click",()=>{
-
-        btn.style.transform = "scale(.95)";
-
-        setTimeout(()=>{
-
-            btn.style.transform = "scale(1)";
-
-        },150);
-
-    });
-
-});
+setInterval(createFirework, 2000);
 
 // =========================
-// Auto Scroll Reveal
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach((entry)=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-
-        }
-
-    });
-
-},{
-    threshold:0.2
-});
-
-sections.forEach((section)=>{
-
-    section.style.opacity = "0";
-    section.style.transform = "translateY(60px)";
-    section.style.transition = "1s";
-
-    observer.observe(section);
-
-});
-
-// =========================
-// Final Message
+// END
 
 console.log("❤️ Happy Birthday My Queen Eshya ❤️");
 
-// =========================
-// End of Script
-// =========================
+
