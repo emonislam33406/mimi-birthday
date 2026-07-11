@@ -718,3 +718,107 @@ font-size:90px;
 /* =========================
 THE END
 ========================= */
+/* =========================
+PREMIUM 3D CAKE
+========================= */
+
+.cake3d{
+position:relative;
+width:220px;
+height:220px;
+margin:40px auto;
+cursor:pointer;
+transition:.6s;
+}
+
+.cake-bottom,
+.cake-middle,
+.cake-top{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+transition:.8s;
+}
+
+.cake-bottom{
+bottom:0;
+width:200px;
+height:70px;
+background:linear-gradient(#ff69b4,#ff3d8d);
+}
+
+.cake-middle{
+bottom:60px;
+width:170px;
+height:60px;
+background:linear-gradient(#ffd166,#ffb703);
+}
+
+.cake-top{
+bottom:110px;
+width:140px;
+height:50px;
+background:linear-gradient(#fff,#ffe5ec);
+}
+
+.candle{
+position:absolute;
+left:50%;
+bottom:160px;
+transform:translateX(-50%);
+width:12px;
+height:45px;
+background:#ffffff;
+border-radius:8px;
+}
+
+.flame{
+position:absolute;
+left:50%;
+bottom:205px;
+transform:translateX(-50%);
+width:18px;
+height:26px;
+background:gold;
+border-radius:50%;
+box-shadow:0 0 20px gold;
+animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+
+0%{
+transform:translateX(-50%) scale(1);
+}
+
+100%{
+transform:translateX(-50%) scale(1.15);
+}
+
+}
+
+/* Cake Cut */
+
+.cake3d.cut .cake-top{
+transform:translateX(-90px) rotate(-18deg);
+}
+
+.cake3d.cut .cake-middle{
+transform:translateX(35px);
+}
+
+.cake3d.cut .flame{
+opacity:0;
+}
+
+#cakeMessage{
+display:none;
+margin-top:30px;
+animation:fadeUp .8s;
+}
+
+#cakeMessage.show{
+display:block;
+}
