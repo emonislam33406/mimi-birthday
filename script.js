@@ -449,3 +449,35 @@ function createSparkle(){
 }
 
 setInterval(createSparkle,300);
+// =========================
+// PREMIUM BUTTERFLIES
+// =========================
+
+function createButterfly(){
+
+    const butterfly = document.createElement("div");
+
+    butterfly.className = "butterfly";
+
+    const butterflies = ["🦋","🦋","🦋"];
+
+    butterfly.innerHTML =
+        butterflies[Math.floor(Math.random()*butterflies.length)];
+
+    butterfly.style.top = (10 + Math.random()*70) + "vh";
+
+    butterfly.style.fontSize =
+        (24 + Math.random()*12) + "px";
+
+    butterfly.style.animationDuration =
+        (8 + Math.random()*4) + "s";
+
+    document.body.appendChild(butterfly);
+
+    setTimeout(()=>{
+        butterfly.remove();
+    },12000);
+
+}
+
+setInterval(createButterfly,5000);
