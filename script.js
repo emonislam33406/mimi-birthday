@@ -416,3 +416,36 @@ function createFlowerPetal(){
 }
 
 setInterval(createFlowerPetal,700);
+// =========================
+// PREMIUM SPARKLES
+// =========================
+
+function createSparkle(){
+
+    const sparkle = document.createElement("div");
+
+    sparkle.className = "sparkle";
+
+    const icons = ["✨","⭐","💫","🧨"];
+
+    sparkle.innerHTML =
+        icons[Math.floor(Math.random()*icons.length)];
+
+    sparkle.style.left = Math.random()*100 + "vw";
+    sparkle.style.top = (20 + Math.random()*70) + "vh";
+
+    sparkle.style.fontSize =
+        (10 + Math.random()*14) + "px";
+
+    sparkle.style.animationDuration =
+        (2 + Math.random()*2) + "s";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(()=>{
+        sparkle.remove();
+    },4000);
+
+}
+
+setInterval(createSparkle,300);
