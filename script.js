@@ -511,3 +511,27 @@ document.getElementById("myPhotoText").style.display = "block";
     });
 
 }
+/* =========================
+LOVE COUNTER
+========================= */
+
+.counter-content{
+width:92%;
+max-width:700px;
+padding:40px 30px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 0 40px rgba(255,0,170,.18);
+text-align:center;
+}
+
+#counter{
+margin-top:25px;
+font-size:38px;
+font-weight:700;
+color:#ff8fd5;
+line-height:1.8;
+text-shadow:0 0 15px rgba(255,105,180,.6);
+	}
