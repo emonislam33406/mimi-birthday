@@ -535,3 +535,30 @@ color:#ff8fd5;
 line-height:1.8;
 text-shadow:0 0 15px rgba(255,105,180,.6);
 	}
+// =========================
+// SECRET MESSAGE
+// =========================
+
+const unlockBtn = document.getElementById("unlockBtn");
+const secretLetter = document.getElementById("secretLetter");
+
+if (unlockBtn && secretLetter) {
+
+    unlockBtn.addEventListener("click", () => {
+
+        unlockBtn.innerHTML = "❤️ Unlocked ❤️";
+        unlockBtn.disabled = true;
+
+        setTimeout(() => {
+
+            secretLetter.classList.add("show");
+
+            secretLetter.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }, 600);
+
+    });
+
+}
