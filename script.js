@@ -387,5 +387,32 @@ function createConfetti() {
 
     }
 
-    }
+}
+// =========================
+// PREMIUM FLOWER PETALS
+// =========================
 
+function createFlowerPetal(){
+
+    const petal = document.createElement("div");
+
+    petal.className = "flower-petal";
+
+    const flowers = ["🌸","🌺","🌹","🌷"];
+
+    petal.innerHTML =
+        flowers[Math.floor(Math.random()*flowers.length)];
+
+    petal.style.left = Math.random()*100 + "vw";
+    petal.style.fontSize = (18 + Math.random()*18) + "px";
+    petal.style.animationDuration = (6 + Math.random()*5) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(()=>{
+        petal.remove();
+    },11000);
+
+}
+
+setInterval(createFlowerPetal,700);
