@@ -539,3 +539,35 @@ if (unlockBtn && secretLetter) {
     });
 
 }
+// =========================
+// LOVE COUNTER
+// =========================
+
+const counter = document.getElementById("counter");
+
+if (counter) {
+
+    const loveDate = new Date("2026-04-26T00:00:00");
+
+    function updateLoveCounter() {
+
+        const now = new Date();
+
+        const diff = now - loveDate;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        counter.innerHTML =
+        `💖 ${days} Days<br>
+         ⏰ ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+
+    }
+
+    updateLoveCounter();
+
+    setInterval(updateLoveCounter, 1000);
+
+}
