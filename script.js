@@ -187,23 +187,38 @@ if (musicBtn && birthdayMusic) {
 }
 
 // =========================
-// CAKE
+// PREMIUM 3D CAKE
+// =========================
 
 const birthdayCake = document.getElementById("birthdayCake");
+const cakeMessage = document.getElementById("cakeMessage");
 
 if (birthdayCake) {
 
+    let cakeCut = false;
+
     birthdayCake.addEventListener("click", () => {
 
-        birthdayCake.style.transform = "scale(1.25)";
+        if (cakeCut) return;
 
+        cakeCut = true;
+
+        // Cake Cutting Animation
+        birthdayCake.classList.add("cut");
+
+        // Show Message
         setTimeout(() => {
 
-            birthdayCake.style.transform = "scale(1)";
+            cakeMessage.classList.add("show");
 
-            alert("🎂 Happy Birthday My Queen Eshya ❤️");
+        }, 900);
 
-        }, 500);
+        // Fireworks
+        for (let i = 0; i < 20; i++) {
+
+            setTimeout(createFirework, i * 120);
+
+        }
 
     });
 
